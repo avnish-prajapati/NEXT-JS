@@ -33,15 +33,15 @@ export default function Home() {
       number: formData.number,
     };
 
-    // Old + New data
+ 
     users.push(newUser);
 
-    // localStorage mein save
+    
     localStorage.setItem("users", JSON.stringify(users));
 
     setMessage("Data added successfully!");
 
-    // 1 second baad Data page par
+    
     setTimeout(() => {
       router.push("/data");
     }, 700);
