@@ -1,0 +1,439 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f5f5;
+  color: #222;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  background: #222;
+  padding: 15px 0;
+}
+
+.nav-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: white;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+.main-container {
+  width: 90%;
+  max-width: 700px;
+  margin: 50px auto;
+}
+
+.table-page {
+  width: 95%;
+  max-width: 1400px;
+  margin: 40px auto;
+}
+
+.page-title {
+  margin-bottom: 25px;
+}
+
+.page-title h1 {
+  margin-bottom: 5px;
+  font-size: 30px;
+}
+
+.page-title p {
+  margin: 0;
+  color: #777;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.form-box {
+  background: white;
+  padding: 30px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.form-box h2 {
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-size: 22px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 7px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 11px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 15px;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #333;
+}
+
+.add-button {
+  width: 100%;
+  padding: 12px;
+  background: #222;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.add-button:hover {
+  background: #000;
+}
+
+/* =========================
+   SUCCESS / ERROR
+========================= */
+
+.success-message {
+  background: #e7f7e7;
+  color: #207520;
+  padding: 12px;
+  border: 1px solid #b7ddb7;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+.error-message {
+  background: #ffe8e8;
+  color: #c00000;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+}
+
+/* =========================
+   FILTERS
+========================= */
+
+.filters {
+  background: white;
+  border: 1px solid #ddd;
+  padding: 15px;
+
+  display: flex;
+  gap: 10px;
+
+  margin-bottom: 15px;
+}
+
+.filters input,
+.filters select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.filters input {
+  flex: 1;
+}
+
+.record-count {
+  margin-bottom: 10px;
+  color: #666;
+}
+
+/* =========================
+   TABLE
+========================= */
+
+.table-container {
+  background: white;
+  border: 1px solid #ccc;
+
+  overflow-x: auto;
+}
+
+.table-container table {
+  width: 100%;
+  min-width: 900px;
+  border-collapse: collapse;
+}
+
+.table-container th,
+.table-container td {
+  border: 1px solid #ccc;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.table-container th {
+  background: #eeeeee;
+  font-weight: bold;
+  cursor: pointer;
+  /* user-select: none; */
+}
+
+.table-container th:hover {
+  background: #dddddd;
+}
+
+.table-container tbody tr:hover {
+  background: #f7f7f7;
+}
+
+.action-buttons {
+  text-align: center !important;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.edit-button,
+.delete-button {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin: 2px;
+}
+
+.edit-button {
+  background: #f0ad00;
+  color: white;
+}
+
+.delete-button {
+  background: #d9534f;
+  color: white;
+}
+
+.edit-button:hover {
+  background: #d99800;
+}
+
+.delete-button:hover {
+  background: #c9302c;
+}
+
+/* =========================
+   PAGINATION
+========================= */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 20px;
+}
+
+.pagination button {
+  padding: 8px 12px;
+  background: white;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.pagination button:hover:not(:disabled) {
+  background: #eeeeee;
+}
+
+.pagination button:disabled {
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+.pagination .active-page {
+  background: #222;
+  color: white;
+  border-color: #222;
+}
+
+.showing-text {
+  text-align: center;
+  color: #777;
+  margin-top: 10px;
+}
+
+/* =========================
+   EMPTY TABLE
+========================= */
+
+.empty-table {
+  background: white;
+  border: 1px solid #ddd;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.empty-table h3 {
+  margin-bottom: 5px;
+}
+
+.empty-table p {
+  color: #777;
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal-background {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.5);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+
+  z-index: 1000;
+}
+
+.modal-box {
+  width: 100%;
+  max-width: 500px;
+
+  background: white;
+
+  padding: 25px;
+
+  border-radius: 6px;
+
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 20px;
+}
+
+.modal-header h2 {
+  margin: 0;
+}
+
+.modal-header button {
+  border: none;
+  background: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.cancel-button,
+.update-button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cancel-button {
+  background: #ddd;
+}
+
+.update-button {
+  background: #222;
+  color: white;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+  .nav-container {
+    width: 94%;
+  }
+
+  .nav-links {
+    gap: 12px;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .main-container,
+  .table-page {
+    width: 94%;
+    margin-top: 30px;
+  }
+
+  .filters {
+    flex-direction: column;
+  }
+
+  .filters input,
+  .filters select {
+    width: 100%;
+  }
+
+  .form-box {
+    padding: 20px;
+  }
+
+}
