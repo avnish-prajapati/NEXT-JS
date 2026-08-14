@@ -23,40 +23,130 @@ export default function DataPage() {
 
   const [editingUser, setEditingUser] = useState(null);
 
-  const rowsPerPage = 10;
+  const rowsPerPage = 5;
 
   
+useEffect(() => {
+  const defaultUsers = [
+    {
+      id: 1,
+      name: "Rahul Sharma",
+      place: "Ahmedabad",
+      gender: "Male",
+      education: "BCA",
+      number: "9876543210",
+    },
+    {
+      id: 2,
+      name: "Priya Patel",
+      place: "Surat",
+      gender: "Female",
+      education: "MCA",
+      number: "9876543211",
+    },
+    {
+      id: 3,
+      name: "Amit Kumar",
+      place: "Vadodara",
+      gender: "Male",
+      education: "B.Tech",
+      number: "9876543212",
+    },
+    {
+      id: 4,
+      name: "Neha Shah",
+      place: "Rajkot",
+      gender: "Female",
+      education: "BBA",
+      number: "9876543213",
+    },
+    {
+      id: 5,
+      name: "Vikas Patel",
+      place: "Gandhinagar",
+      gender: "Male",
+      education: "MBA",
+      number: "9876543214",
+    },
+  ];
 
-  useEffect(() => {
-    const savedData = localStorage.getItem("users");
+  const savedData = localStorage.getItem("users");
 
-    if (savedData) {
-      setUsers(JSON.parse(savedData));
-    }
-  }, []);
-
- 
-
-  const handleDelete = (id) => {
-    const confirmDelete = window.confirm(
-      "Are you sure you want to delete this data?"
-    );
-
-    if (!confirmDelete) {
-      return;
-    }
-
-    const newUsers = users.filter(
-      (user) => user.id !== id
-    );
-
-    setUsers(newUsers);
+  if (!savedData) {
+    setUsers(defaultUsers);
 
     localStorage.setItem(
       "users",
-      JSON.stringify(newUsers)
+      JSON.stringify(defaultUsers)
     );
-  };
+
+    return;
+  }
+
+  const existingUsers = JSON.parse(savedData);
+
+  // Agar existing data 5 se kam hai,
+  // toh default data se missing records add karo
+  if (existingUsers.length < 5) {
+    const missingUsers = defaultUsers.slice(
+      existingUsers.length
+    );
+
+    const updatedUsers = [
+      ...existingUsers,
+      ...missingUsers,
+    ].map((user, index) => ({
+      ...user,
+      id: index + 1,
+    }));
+
+    setUsers(updatedUsers);
+
+    localStorage.setItem(
+      "users",
+      JSON.stringify(updatedUsers)
+    );
+  } else {
+    setUsers(existingUsers);
+  }
+}, []); 
+
+const handleDelete = (id) => {
+  const confirmDelete = window.confirm(
+    "Are you sure you want to delete this data?"
+  );
+
+  if (!confirmDelete) {
+    return;
+  }
+
+
+  const filteredUsers = users.filter(
+    (user) => user.id !== id
+  );
+
+ 
+  const newUsers = filteredUsers.map((user, index) => ({
+    ...user,
+    id: index + 1,
+  }));
+
+  setUsers(newUsers);
+
+  localStorage.setItem(
+    "users",
+    JSON.stringify(newUsers)
+  );
+
+  
+  const newTotalPages = Math.ceil(
+    newUsers.length / rowsPerPage
+  );
+
+  if (currentPage > newTotalPages && newTotalPages > 0) {
+    setCurrentPage(newTotalPages);
+  }
+};
 
 
   const handleUpdate = (updatedUser) => {
