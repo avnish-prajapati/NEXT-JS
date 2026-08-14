@@ -35,12 +35,12 @@ Users can search records using **Name, Place, Gender, Education, or Number**. Re
 
 ## 📄 Pagination
 
-The table displays **10 records per page**.
+The table displays **5 records per page**.
 
 ```text
-Page 1 → Records 1 - 10
-Page 2 → Records 11 - 20
-Page 3 → Records 21 - 30
+Page 1 → Records 1 - 5
+Page 2 → Records 6 - 10
+Page 3 → Records 11 - 15
 
 
 💾 Data Storage
