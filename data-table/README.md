@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+OUTPUT:<NULL>
 
-## Getting Started
+# 📊 Next.js Data Table CRUD App
 
-First, run the development server:
+A simple and beginner-friendly **Data Table Management Application** built with **Next.js, React.js, JavaScript, and CSS**. This project provides an Excel-style data table where users can easily add, view, search, filter, sort, update, and delete records. All data is stored in the browser using LocalStorage, so no backend or database is required.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- ➕ Add new records
+- 📋 Display records in an Excel-style data table
+- ✏️ Update existing records
+- 🗑️ Delete records
+- 🔍 Search records
+- 🎯 Filter records by Gender and Education
+- ↕️ Sort table columns
+- 📄 Pagination with 10 records per page
+- 💾 Store data using Browser LocalStorage
+- 📱 Simple responsive UI
+- ⚡ Clean and beginner-friendly code
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 📝 Data Fields
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Each record contains **ID, Name, Place, Gender, Education, and Number**.
 
-## Learn More
+## 🔄 CRUD Operations
 
-To learn more about Next.js, take a look at the following resources:
+**Create:** Add new records through the Add Data form.  
+**Read:** View all saved records in the Excel-style table.  
+**Update:** Edit existing records using the Edit button.  
+**Delete:** Remove records using the Delete button.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🔍 Search & Filter
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Users can search records using **Name, Place, Gender, Education, or Number**. Records can also be filtered by **Gender** and **Education**.
 
-## Deploy on Vercel
+## 📄 Pagination
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The table displays **10 records per page**.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```text
+Page 1 → Records 1 - 10
+Page 2 → Records 11 - 20
+Page 3 → Records 21 - 30
+
+
+💾 Data Storage
+
+All records are saved in the browser using LocalStorage. The project does not require a backend or database. Clearing the browser's LocalStorage will remove the saved records.
+
+🛠️ Technologies Used
+
+Next.js • React.js • JavaScript • HTML • CSS • LocalStorage
+
+🎯 Project Purpose
+
+This project was created to practice important Next.js and React concepts such as React Hooks, State Management, Next.js App Router, Client Components, LocalStorage, CRUD Operations, Searching, Filtering, Sorting, Pagination, and Component-Based Architecture.
+
+👨‍💻 Author
+
+Avnish Kumar Prajapati
+GitHub: https://github.com/avnish-prajapati
