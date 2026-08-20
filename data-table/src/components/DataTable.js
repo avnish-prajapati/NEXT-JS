@@ -7,7 +7,8 @@ export default function DataTable({
   onSort,
   sortField,
   sortOrder,
-}) {
+}) 
+{
 
   const getArrow = (field) => {
 
